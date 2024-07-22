@@ -19,7 +19,7 @@ public class Direccion {
     public int getNoCasa() {
         return noCasa;
     }
-    public void setNoCalle(int noCasa) {
+    public void setNoCasa(int noCasa) {
         this.noCasa = noCasa;
     }
     public int getCodigoPostal() {
@@ -55,7 +55,7 @@ public class Direccion {
     @Override
     public String toString() {
         return 
-        "---Datos de Direccion---"+"\n"+
+        "\n---Datos de Direccion---"+"\n"+
         "Numero de Casa: " + noCasa + "\n"+
         "Calle: " + calle + "\n"+ 
         "Colonia : "+ colonia + "\n"+

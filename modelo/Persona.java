@@ -6,7 +6,8 @@ public abstract class Persona {
     protected String apellidoMaterno;
     protected Direccion direccion;
     protected Contacto contacto;
-    private String curp;
+    protected String curp;
+    protected boolean estatus;        
 
     public abstract void generaID();
 
@@ -18,6 +19,7 @@ public abstract class Persona {
         direccion = new Direccion();
         contacto = new Contacto();
         curp = "";
+        estatus = true;
     }
     public Persona(String nombre, String apellidoPaterno, String apellidoMaterno, Direccion direccion,
             Contacto contacto, String curp) {
@@ -62,31 +64,42 @@ public abstract class Persona {
     public String getID(){
         return id;
     }
-    public void setCurp(String curp){
-        this.curp = curp;
-    }
+    
     public String getCurp(){
         return curp;
     }
     
-    public void validaCurp(String curp){
-        if(curp.length() == 18){
-            System.out.println("\n....Curp Verificado....\n");
-        }
+    
+    public void setCurp(String curp) {
         this.curp = curp;
+    }
+    
+    
+
+
+    public boolean isEstatus() {
+        return estatus;
+    }
+
+    public void setEstatus(boolean estatus) {
+        this.estatus = estatus;
     }
 
     @Override
     public String toString() {
+        String esta = estatus ? "Activo":"Inactivo";
         return 
         "---Datos Generales---"+"\n"+
-        "Nombre: " + nombre + "\n"+
-        "Apellido Paterno: " + apellidoPaterno + "\n"+ 
-        "Apellido Materno: "+ apellidoMaterno + "\n"+ 
-        "Curp: " + curp + "\n" +
+        "Nombre: " + nombre.toUpperCase() + "\n"+
+        "Apellido Paterno: " + apellidoPaterno.toUpperCase() + "\n"+ 
+        "Apellido Materno: "+ apellidoMaterno.toUpperCase() + "\n"+ 
+        "Curp: " + curp.toUpperCase() + "\n" +
         direccion + "\n"+ 
-        contacto + "\n";
+        contacto + "\n"+
+        "Estatus: "+ esta + "\n" + "\n" ;
     }
+
+    
 
     
 }

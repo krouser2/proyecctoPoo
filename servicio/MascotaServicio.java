@@ -22,4 +22,15 @@ public class MascotaServicio {
         }  
         return listaPerros + "\n" + listaGatos + "\n" + listaOtros;  
     }  
+
+    public static String consultarMascota(Mascota[] arr, String mascota){
+        String nuevaMascota = "";
+        for (Mascota mascot : arr) {
+            if(mascot.getNombre().equalsIgnoreCase(mascota)){
+                nuevaMascota = mascot.toString();
+                break;
+            }
+        }
+        return nuevaMascota;
+    }
 }

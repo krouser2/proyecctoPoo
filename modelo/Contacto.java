@@ -30,7 +30,7 @@ public class Contacto {
     public String toString() {
         
         return 
-        "---Datos de Contacto---"+"\n"+
+        "\n---Datos de Contacto---"+"\n"+
         "Telefono Fijo: " + telefonoFijo + "\n"+
         "Telefono Movil: " + telefonoMovil + "\n"+ 
         "Correo Electronico: "+ correoElectronico + "\n";
